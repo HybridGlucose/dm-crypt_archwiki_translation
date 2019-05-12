@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tmx SYSTEM "tmx11.dtd">
+<tmx version="1.1">
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="OmegaT-3.6.0" segtype="sentence" srclang="EN-US"/>
+  <body>
+<!-- Default translations -->
+    <tu>
+      <tuv lang="EN-US">
+        <seg>* For [[SSD]]s, as a best effort to minimize [[Securely wipe disk#Flash memory|flash memory]] cache artifacts, consider performing a [[SSD memory cell clearing]] ''prior'' to instructions below.}}</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T085454Z" creationid="glucose" creationdate="20190512T084347Z">
+        <seg>* 對於 [[SSD|Solid state drive (正體中文)]]，在做以下動作之前為了防止 [[Securely wipe disk#Flash memory|快閃記憶體]] 因快取的關係而無法完整覆寫資料，您應該執行 [[Solid state drive/Memory cell clearing|SSD 的記憶單元清除]]。}}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>* If the LVM/RAID devices are created on top of the encrypted layer, it will be possible to add, remove and resize the file systems of the same encrypted partition liberally, and only one key or passphrase will be required for all of them.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T151950Z" creationid="glucose" creationdate="20190512T150214Z">
+        <seg>* 如果 LVM/RAID 裝置建立在加密層之上（先加密再 LVM）， 則可以自由地增加刪除或變更檔案系統大小，但必須基於相同的加密分割區，然後這些則只需要一組密語或金鑰。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>* If the encrypted layer is created on top of LVM/RAID devices, it will still be possible to reorganize the file systems in the future, but with added complexity, since the encryption layers will have to be adjusted accordingly.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T152016Z" creationid="glucose" creationdate="20190512T150723Z">
+        <seg>* 如果加密層是建立在 LVM/RAID 裝置之上（先 LVM 再加密），依然可以重新變更檔案系統的組成，但是會稍微複雜，必須要適當的調整各個加密層。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>* To perform a check of the operation, zero the partition before creating the wipe container.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T094931Z" creationid="glucose" creationdate="20190512T093639Z">
+        <seg>* 確定分割區是否都已經在建立覆寫容器後被寫 0。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>== Secure erasure of the hard disk drive ==</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T083048Z" creationid="glucose" creationdate="20190512T083022Z">
+        <seg>== 安全地覆寫硬碟 ==</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=== Boot partition (GRUB) ===</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144206Z" creationid="glucose" creationdate="20190512T144206Z">
+        <seg>=== 開機磁區 （GRUB） ===</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=== Btrfs subvolumes ===</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T151124Z" creationid="glucose" creationdate="20190512T151124Z">
+        <seg>=== Btrfs 子捲軸 ===</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=== Generic methods ===
+For detailed instructions on how to erase and prepare a drive consult [[Securely wipe disk]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T085637Z" creationid="glucose" creationdate="20190512T085606Z">
+        <seg>=== 通用方法 ===
+詳細的操作方式請參閱 [[Securely wipe disk|安全地清除硬碟]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=== Physical partitions ===</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144806Z" creationid="glucose" creationdate="20190512T144806Z">
+        <seg>=== 物理分割區 ===</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=== Stacked block devices ===</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T145533Z" creationid="glucose" creationdate="20190512T145533Z">
+        <seg>=== 堆疊的區塊裝置 ===</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>=== dm-crypt specific methods ===
+The following two methods are specific for dm-crypt and are mentioned because they are very fast and can be performed after a partition setup too.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T090029Z" creationid="glucose" creationdate="20190512T085633Z">
+        <seg>=== dm-crypt 的專用方法 ===
+以下兩種方式特別針對 dm-crypt 因為它們非常快速也可以在設定分割區後才執行。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>==== Wipe LUKS header ====</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T113700Z" creationid="glucose" creationdate="20190512T113700Z">
+        <seg>==== 覆寫 LUKS 標頭====</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>==== dm-crypt wipe free space after installation ====</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T095216Z" creationid="glucose" creationdate="20190512T095216Z">
+        <seg>==== dm-crypt 在安裝後覆寫未使用空間 ====</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>==== dm-crypt wipe on an empty disk or partition ====</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T094919Z" creationid="glucose" creationdate="20190512T091506Z">
+        <seg>==== dm-crypt 覆寫一個空硬碟或空分割區 ====</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>==Partitioning==</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142644Z" creationid="glucose" creationdate="20190512T142644Z">
+        <seg>==分割磁區==</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>A header with one single default 256 bit size keyslot is 1024KiB in size.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125500Z" creationid="glucose" creationdate="20190512T125456Z">
+        <seg>一個預設標頭只具有 256 bit 大小的單一金鑰槽應該為 1024KiB 的大小。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>A use of {{ic|1=if=/dev/urandom}} is not required as the encryption cipher is used for randomness.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T093804Z" creationid="glucose" creationdate="20190512T093109Z">
+        <seg>因為上面開啟加密容器時使用 {{ic|-d /dev/urandom}} 指定隨機數為解密金鑰，所以這裡不需要使用 {{ic|1=if=/dev/urandom}}。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>After the drive(s) has/have been securely overwritten, a proper partitioning scheme will have to be accurately chosen, taking into account the requirements of dm-crypt, and the effects that the various choices will have on the management of the resulting system.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T143950Z" creationid="glucose" creationdate="20190512T143903Z">
+        <seg>當裝置在安全的覆寫過後，接著要準確的選擇您的分割區方案，考量 dm-crypt 的需求及最終對管理系統的影響。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>After the header the actual random data partition starts.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T115909Z" creationid="glucose" creationdate="20190512T115909Z">
+        <seg>在標頭之後才是實際的亂數資料分割區的開始。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>After the wipe command {{ic|blockdev --getsize64 ''/dev/mapper/container''}} can be used to get the exact container size as root.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T094215Z" creationid="glucose" creationdate="20190512T094053Z">
+        <seg>在覆寫指令之後 {{ic|blockdev --getsize64 ''/dev/mapper/container''}} 可以以 root 身份取得精確的容器大小。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>An exception to this may occur for an SSD, because of cache blocks SSDs employ.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142204Z" creationid="glucose" creationdate="20190512T142204Z">
+        <seg>一個例外是在 SSD 上，因為 SSD 會使用快取進行操作。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Another important factor to take into account is how the swap area and system suspension will be handled, see [[dm-crypt/Swap encryption]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144754Z" creationid="glucose" creationdate="20190512T144754Z">
+        <seg>另一個考量的重要因素是如何處理置換區域及系統暫停時如何處理，請參閱 [[dm-crypt/Swap encryption]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Before encrypting a drive, it is recommended to perform a secure erase of the disk by overwriting the entire drive with random data.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T082814Z" creationid="glucose" creationdate="20190512T082411Z">
+        <seg>在加密您的裝置之前，這裡非常推薦使用隨機亂數去覆寫整個裝置以確保安全。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Finally note that separate passphrases or keys are required to open each encrypted partition, even though this can be automated during boot using the {{ic|crypttab}} file, see [[Dm-crypt/System configuration#crypttab]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T145518Z" creationid="glucose" creationdate="20190512T145518Z">
+        <seg>最後請注意，打開每個加密分區都需要獨立的密語或金鑰，可以使用 {{ic|crypttab}} 在開機過程中自動處理這些事情，請參閱 [[Dm-crypt/System configuration#crypttab]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Finally, close the temporary container:</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T094751Z" creationid="glucose" creationdate="20190512T094751Z">
+        <seg>最後，關閉暫時的加密容器：</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>First, create a temporary encrypted container on the partition (using the form {{ic|sdXY}}) or complete device (using the form {{ic|sdX}}) to be encrypted:</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T094926Z" creationid="glucose" creationdate="20190512T091710Z">
+        <seg>首先，在一個分割區上建立一個暫時的加密容器（{{ic|sdXY}}）或完整的裝置（{{ic|sdX}}）來加密：</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>For 512 bit key length (e.g. for aes-xts-plain with 512 bit key) the header is 2MiB.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125825Z" creationid="glucose" creationdate="20190512T125816Z">
+        <seg>對於 512 bit 金鑰長度（例如 aes-xts-plain 的 512 bit 金鑰） 它的標頭長度是 2MiB。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>For a more comprehensive discussion see [[Disk encryption#Preparing the disk]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T083004Z" creationid="glucose" creationdate="20190512T083004Z">
+        <seg>更多完整的討論，請參閱 [[Disk encryption#Preparing the disk]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>For example, setting-up [[Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS|LVM on LUKS]], the process has to be performed for every logical volume.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T130323Z" creationid="glucose" creationdate="20190512T113534Z">
+        <seg>例如在 [[Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS|LUKS 上的 LVM]]，則必須在所有邏輯捲軸（LV）上都執行過。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>For strong security concerns, a secure ATA erase of the SSD should be done (procedure please see the cryptsetup [https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects FAQ 5.19]).</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142522Z" creationid="glucose" creationdate="20190512T142522Z">
+        <seg>為了強烈的安全起見，還是建議 SSD 進行安全的資料覆寫（步驟請參考 cryptsetup 的 [https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects FAQ 5.19]）。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>For zero offset use:</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125721Z" creationid="glucose" creationdate="20190512T125721Z">
+        <seg>沒有任何偏移的情況：</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Hence, when re-installing on an already randomized drive, or de-commissioning one (e.g. sale of PC, switch of drives, etc.) it ''may'' be just enough to wipe the header of the partition, rather than overwriting the whole drive - which can be a lengthy process.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T120144Z" creationid="glucose" creationdate="20190512T120144Z">
+        <seg>然而在重新安裝或停止使用（像是更換裝置或是販售電腦）已經亂數化的裝置，它 ''可能'' 只需要清除分割區的標頭，而不用執行又臭又長的覆寫過程。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>However note that swap files were [https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F not supported] by brtrfs before Linux 5.0, so an [[encrypted swap]] partition is necessary if [[swap]] is desired on Linux &lt;5.0 (e.g. {{pkg|linux-lts}}).</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T151617Z" creationid="glucose" creationdate="20190512T151617Z">
+        <seg>但是請注意在 Linux 5.0 之前 Btrfs [https://btrfs.wiki.kernel.org/index.php/FAQ#Does_btrfs_support_swap_files.3F 不支援] 置換檔案，所以如果您需要 [[swap | 置換空間]] 且 Linux &lt; 5.0 （像是{{pkg|linux-lts}}），則您就需要 [[dm-crypt/Swap encryption|加密的置換空間]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>However, consider if the concerned filesystem may have set up reserved space, e.g. for the root user, or another [[disk quota]] mechanism, that that may limit the wipe even when performed by the root user: some parts of the underlying block device might not get written to at all.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T113538Z" creationid="glucose" creationdate="20190512T100257Z">
+        <seg>請記得考慮有關於檔案系統是否有設定保留空間，像是給 root 帳號或其他 [[disk quota|磁碟配額]] 等機制，即使使用 root 帳號也有可能被限制覆寫：有些部份的底層區塊裝置可能無法完全被寫入。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>If in doubt, just be generous and overwrite the first 10MiB or so.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125922Z" creationid="glucose" creationdate="20190512T125922Z">
+        <seg>如果有任何疑慮，大概覆蓋 10MiB 左右的大小也可以。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>If just encrypting a partition, continue [[dm-crypt/Encrypting a non-root file system#Partition]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T095156Z" creationid="glucose" creationdate="20190512T095110Z">
+        <seg>如果只是想加密單一分割區，請參閱 [[dm-crypt/Encrypting a non-root file system#Partition|Dm-crypt/加密非root檔案系統#分割區]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>If more flexibility is needed, though, dm-crypt can coexist with other stacked block devices like [[LVM]] and [[RAID]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T145652Z" creationid="glucose" creationdate="20190512T145652Z">
+        <seg>如果需要更大的靈活性，dm-crypt 可以與其他區塊裝置像是 [[LVM]] 和 [[RAID]] 共存。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>If this raises security concerns, see [[dm-crypt/Specialties#Securing the unencrypted boot partition]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144623Z" creationid="glucose" creationdate="20190512T144621Z">
+        <seg>如果因此有安全上的疑慮，請參閱 [[dm-crypt/Specialties#Securing the unencrypted boot partition]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>In deciding which method to use for secure erasure of a hard disk drive, remember that this needs only to be performed once for as long as the drive is used as an encrypted drive.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T093020Z" creationid="glucose" creationdate="20190512T083356Z">
+        <seg>在決定使用哪種方式覆寫硬碟之前，請記住只要任何一顆硬碟做為加密裝置之後，就不需要再執行這項操作。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>In order not to leave the machine unusable during the operation, it may be worth to do it from a system already installed on another drive, rather than from the live Arch installation system.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T084300Z" creationid="glucose" creationdate="20190512T084300Z">
+        <seg>為了在過程中依舊能使用電腦，您應該使用已安裝好的系統進行這項作業而不是使用 Live Arch 安裝系統。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>In the simplest case, the encrypted layers can be based directly on the physical partitions; see [[Partitioning]] for the methods to create them.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144934Z" creationid="glucose" creationdate="20190512T144934Z">
+        <seg>最簡單的情況下加密可以直接作用於物理分割區上，如何建立分割區及方法請參閱 [[Partitioning]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>In theory it may happen that the header was cached in these some time before and that copy may consequently be still available after wiping the original header.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142353Z" creationid="glucose" creationdate="20190512T142319Z">
+        <seg>理論上在一定時間內原始標頭還是會被快取起來，因此覆寫標頭後還是有可能可以使用。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It is advised to also overwrite the first 4KiB written by dm-crypt, so 1028KiB have to be wiped.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125649Z" creationid="glucose" creationdate="20190512T125649Z">
+        <seg>也建議同時覆蓋由 dm-crypt 所寫入最前端前的 4Kib 資料，所以有 1028Kib 需要被覆蓋。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It is also claimed to protect against disclosure of usage patterns.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T091127Z" creationid="glucose" creationdate="20190512T091127Z">
+        <seg>它還宣稱可以保護防止洩漏使用方式。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It is important to note from now that in [[#Boot partition (GRUB)|almost]] every case there has to be a separate partition for {{ic|/boot}} that must remain unencrypted, because the bootloader needs to access the {{ic|/boot}} directory where it will load the initramfs/encryption modules needed to load the rest of the system (see [[mkinitcpio]] for details).</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144458Z" creationid="glucose" creationdate="20190512T144308Z">
+        <seg>這裡開始請注意，[[#開機磁區 （GRUB）|大部分]] 的方法都需要有一個獨立的未加密 {{ic|/boot}} 分割區，因為開機載入程式需要存取 {{ic|/boot}} 目錄內的 initramfs 及加密模組才能完成開機（請參閱 [[mkinitcpio]]）。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>It will also be possible to add or remove partitions in the future, but resizing a partition will be limited by the size of the disk that is hosting it.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T145351Z" creationid="glucose" creationdate="20190512T145351Z">
+        <seg>當然也可以隨意增加或刪除分割區，但是變更分割區大小會受到硬碟大小本身的限制。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Just like in an unencrypted system, a root partition is sufficient, besides another for {{ic|/boot}} as noted above.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T145153Z" creationid="glucose" creationdate="20190512T145153Z">
+        <seg>就像其他未加密系統一樣，只需要 root 分割區即可，但就上述所說請避開 {{ic|/boot}} 分區。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>LUKS2 header is 4MiB.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125833Z" creationid="glucose" creationdate="20190512T125833Z">
+        <seg>LUKS2 標頭是 4MiB。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Moreover, separate passphrases or keys will be required to open each encrypted device.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T150809Z" creationid="glucose" creationdate="20190512T150744Z">
+        <seg>此外，每一個加密層都需要獨立的密語或金鑰才能打開。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Now ''od'' can be used to spotcheck whether the wipe overwrote the zeroed sectors, e.g. {{ic|od -j ''containersize - blocksize''}} to view the wipe completed to the end.}}</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T094719Z" creationid="glucose" creationdate="20190512T094719Z">
+        <seg>現在可以使用 ''od'' 指令來確定是否所有扇區都已經被寫 0，例如 {{ic|od -j ''containersize - blocksize''}} 可以查看覆寫完成後到結束位置。}}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>See [[dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T151712Z" creationid="glucose" creationdate="20190512T151712Z">
+        <seg>請參閱 [[dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>See also [[Dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T151706Z" creationid="glucose" creationdate="20190512T151658Z">
+        <seg>請參閱 [[Dm-crypt/Encrypting an entire system#Btrfs subvolumes with swap]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>See further sections on how to make a backup of the crucial header blocks.}}</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142010Z" creationid="glucose" creationdate="20190512T142010Z">
+        <seg>請參閱其他的方有關如何備份關鍵的標頭區塊。}}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Setups with encryption as a device-mapper layer on top of others, e.g. LVM on LUKS on RAID should then write to RAID respectively.}}</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125204Z" creationid="glucose" creationdate="20190512T125034Z">
+        <seg>將加密設定在其他裝置映射層（device-mapper layer）之上，例如先設定好 RAID 後設定 LUKS 之後建立 LVM，應該分別地被寫入 RAID。}}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Since the encrypted layer resides on a physical partition, though, it will not be possible to exploit the ability of LVM and RAID to span multiple disks.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T150536Z" creationid="glucose" creationdate="20190512T150536Z">
+        <seg>但是因為加密是建立在物理分區之上，所以沒有辦法使用 LVM 或 RAID 的跨磁碟能力。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>That is because encrypted data is practically indistinguishable from random.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T091220Z" creationid="glucose" creationdate="20190512T091207Z">
+        <seg>這是因為加密後的資料實際上與亂數資料無法分辨。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>That is {{ic|1052672}} Byte.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125659Z" creationid="glucose" creationdate="20190512T125659Z">
+        <seg>總共是 {{ic|1052672}} Byte。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>The [https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup cryptsetup FAQ] (item 2.19 "''How can I wipe a device with crypto-grade randomness?''") mentions a very simple procedure to use an existing dm-crypt-volume to wipe all free space accessible on the underlying block device with random data by acting as a simple pseudorandom number generator.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142624Z" creationid="glucose" creationdate="20190512T090226Z">
+        <seg>在 [https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup cryptsetup FAQ] （2.19項 "''How can I wipe a device with crypto-grade randomness?''"） 中提到可以在既存的 dm-crypt 分割區 中使用偽造的亂數產生器對底層區塊裝置的未使用空間進行覆寫。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>The above process has to be repeated for every partition blockdevice created and filesystem in it.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T113440Z" creationid="glucose" creationdate="20190512T113440Z">
+        <seg>以上的操作必須執行於每個區塊裝置上分割區的檔案系統都執行過一遍。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>The encrypted containers can either reside below or on top of other stacked block devices:</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T150009Z" creationid="glucose" creationdate="20190512T150009Z">
+        <seg>加密容器可以位於堆疊區塊裝置之上或之下：</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>The partitions formatted with dm-crypt/LUKS contain a header with the cipher and crypt-options used, which is referred to {{ic|dm-mod}} when opening the blockdevice.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T115833Z" creationid="glucose" creationdate="20190512T115833Z">
+        <seg>被 dm-crypt/LUKS 格式化的分割區標頭會含有密碼及加密選項， 當開啟區塊裝置時被稱為 {{ic|dm-mod}}。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>This method allows deciding which partitions to encrypt and which to leave unencrypted, and works the same regardless of the number of disks involved.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T145238Z" creationid="glucose" creationdate="20190512T145238Z">
+        <seg>這個方法可以自由決定哪些分割區要加密哪些不要，無論多少硬碟或分割區方法都一樣。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>This section only applies when encrypting an entire system.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142711Z" creationid="glucose" creationdate="20190512T142711Z">
+        <seg>本節只適用於加密整個系統。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>This, however, is the only choice for systems that need encrypted file systems to span multiple disks.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T150851Z" creationid="glucose" creationdate="20190512T150851Z">
+        <seg>但這是跨多硬碟的加密系統唯一一個的方法。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>To execute the wipe, temporarily fill the remaining free space of the partition by writing to a file inside the encrypted container:
+{{hc|1=# dd if=/dev/zero of=/file/in/container status=progress|
+2=dd: writing to ‘/file/in/container’: No space left on device}}
+Sync the cache to disk and then delete the file to reclaim the free space.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T113304Z" creationid="glucose" creationdate="20190512T113304Z">
+        <seg>執行覆寫的方式，透過在加密容器中寫入一個檔案，這樣就會填滿剩餘的空間：
+{{hc|1=# dd if=/dev/zero of=/file/in/container status=progress|
+2=dd: writing to ‘/file/in/container’: No space left on device}}
+同步硬碟快取後刪除剛剛所產生的檔案來釋放空間。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>To prevent cryptographic attacks or unwanted [[file recovery]], this data is ideally indistinguishable from data later written by dm-crypt.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T082935Z" creationid="glucose" creationdate="20190512T082811Z">
+        <seg>為了避免加密攻擊或非預期的 [[file recovery|檔案救援]]，這些資料應該要與 dm-crypt 所寫入的資料無法區分。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Users who did not have time for the wipe procedure before [[Dm-crypt/Encrypting_an_entire_system|installation]], can achieve a similar effect once the encrypted system is booted and the filesystems are mounted.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T100022Z" creationid="glucose" creationdate="20190512T100022Z">
+        <seg>某些用戶沒有時間在 [[Dm-crypt/Encrypting_an_entire_system|安裝]] 前執行覆寫，在加密系統開啟完成及掛載檔案系統後，可以達成類似的效果。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>When encrypting an entire system, the next step is [[#Partitioning]].</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T095043Z" creationid="glucose" creationdate="20190512T094822Z">
+        <seg>當想要加密整個系統時，下一步請參閱 [[#分割磁區]]。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>When wiping the header with random data everything left on the device is encrypted data.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142123Z" creationid="glucose" creationdate="20190512T142123Z">
+        <seg>當使用隨機亂數覆寫標頭後，就只會剩下被加密的資料。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Wipe the container with zeros.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T091910Z" creationid="glucose" creationdate="20190512T091910Z">
+        <seg>使用 {{ic|0}} 覆寫容器。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>Wiping the LUKS header will delete the PBKDF2-encrypted (AES) master key, salts and so on.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T120410Z" creationid="glucose" creationdate="20190512T120410Z">
+        <seg>清除 LUKS 標頭時將會刪除基於 PBKDF2 加密(AES)的主金鑰、鹽或其他東西。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>You can verify that it exists:</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T091739Z" creationid="glucose" creationdate="20190512T091739Z">
+        <seg>您可以驗證它是否已經建立完成：</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>[[Btrfs]]'s built-in [[Btrfs#Subvolumes|subvolumes feature]] can be used with dm-crypt, fully replacing the need for LVM if no other file systems are required.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T151245Z" creationid="glucose" creationdate="20190512T151245Z">
+        <seg>[[Btrfs]] 內的 [[Btrfs#Subvolumes|子捲軸]] 可以與 dm-crypt 一起使用，如果不需要其他檔案系統則可以完全取代 LVM。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>{{Lowercase title}}
+[[Category:Disk encryption]]
+[[es:Dm-crypt/Drive preparation]]
+[[pl:Dm-crypt/Drive preparation]]
+[[ja:Dm-crypt/ドライブの準備]]
+{{Related articles start}}
+{{Related|Disk encryption#Preparing the disk}}
+{{Related|Securely wipe disk}}
+{{Related articles end}}</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T082148Z" creationid="glucose" creationdate="20190512T082148Z">
+        <seg>{{Lowercase title}}
+[[Category:Encryption (正體中文)]]
+[[en:Dm-crypt/Drive preparation]]
+[[es:Dm-crypt/Drive preparation]]
+[[pl:Dm-crypt/Drive preparation]]
+[[ja:Dm-crypt/ドライブの準備]]
+{{Related articles start}}
+{{Related|Disk encryption#Preparing the disk}}
+{{Related|Securely wipe disk}}
+{{Related articles end}}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>{{Note|It is crucial to write to the LUKS encrypted partition ({{ic|/dev/sdX'''1'''}} in this example) and not directly to the disks device node.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T123828Z" creationid="glucose" creationdate="20190512T120415Z">
+        <seg>{{註記|寫入 LUKS 分割區 (本例中為 {{ic|/dev/sdX'''1'''}}) 而不是直接指向磁碟裝置節點是很重要的關鍵。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>{{Note|When wiping large amount of data, the process will take several hours to several days to complete.}}</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T083529Z" creationid="glucose" creationdate="20190512T083529Z">
+        <seg>{{註記|當開始覆寫大量資料時，可能需要數小時至數天才可以完成。}}</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>{{Note|With a backup-copy of the header data can get rescued but the filesystem was likely damaged as the first encrypted sectors were overwritten.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T141747Z" creationid="glucose" creationdate="20190512T125928Z">
+        <seg>{{註記|備份標頭檔案可以取得救援機會，但因為第一個加密的扇區被覆蓋了，可能會導致檔案系統毀損。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>{{Tip|
+* The process of filling an encrypted drive can take over a day to complete on a multi-terabyte disk.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T083829Z" creationid="glucose" creationdate="20190512T083829Z">
+        <seg>{{提示|
+* 覆寫過程中可能需要超過一天時間才能完成數 TB 大小的硬碟。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>{{Tip|
+* Using ''dd'' with the {{ic|1=bs=}} option, e.g. {{ic|1=bs=1M}}, is frequently used to increase disk throughput of the operation.</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T093248Z" creationid="glucose" creationdate="20190512T093122Z">
+        <seg>{{提示|
+* 使用 ''dd'' 配合 {{ic|1=bs=}} 選項，像是 {{ic|1=bs=1M}}，可以增加硬碟在操作時的吞吐量。</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="EN-US">
+        <seg>{{Warning|Make appropriate backups of valuable data prior to starting!}}</seg>
+      </tuv>
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T152109Z" creationid="glucose" creationdate="20190512T083437Z">
+        <seg>{{警告|開始之前請先妥善地備份任何有價值的重要資料！}}</seg>
+      </tuv>
+    </tu>
+<!-- Alternative translations -->
+  </body>
+</tmx>

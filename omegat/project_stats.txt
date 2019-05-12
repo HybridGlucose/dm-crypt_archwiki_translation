@@ -1,0 +1,15 @@
+2019/5/13 上午 1:35
+方案數據統計
+
+          	分節數	  字數	字元數（不含空白）	字元數（含空白）	#Files	
+總數：       	170	2779	    15260	   17712	     2	
+Remaining:	 89	1137	     6428	    7423	     2	
+唯一分節：     	168	2771	    15199	   17644	     2	
+剩餘唯一分節：   	 87	1129	     6367	    7355	     2	
+
+
+個別檔案數據統計：
+
+檔案名稱                                  	Total Segments	Remaining Segments	Unique Segments	Unique Remaining Segments	 總字數	剩餘字數	Unique Words	Unique Remaining Words	總字元數（不含空白）	剩餘字元數（不含空白）	Unique Characters (without spaces)	Unique Remaining Characters (without spaces)	總字元數（含空白）	剩餘字元數（含空白）	Unique Characters (including spaces)	Unique Remaining Characters (including spaces)	
+Drive_preparation.UTF8                	            88	                 8	             88	                        8	1687	  85	        1687	                    85	      9017	        442	                              9017	                                         442	    10539	       530	                               10539	                                           530	
+Encrypting_a_non-root_file_system.UTF8	            82	                81	             80	                       79	1092	1052	        1084	                  1044	      6243	       5986	                              6182	                                        5925	     7173	      6893	                                7105	                                          6825	

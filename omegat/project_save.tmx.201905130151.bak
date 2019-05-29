@@ -38,46 +38,10 @@
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>== Loop device ==</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162559Z" creationid="glucose" creationdate="20190529T162559Z">
-        <seg>== Loop 裝置 ==</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>== Overview == 
-Encrypting a secondary filesystem usually protects only sensitive data, while leaving the operating system and program files unencrypted.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T153654Z" creationid="glucose" creationdate="20190529T153654Z">
-        <seg>== 概覽 == 
-只須保護敏感資料的話通常會加密次要檔案系統，而作業系統及程式檔案處於未加密狀態。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>== Partition ==
-This example covers the encryption of the {{ic|/home}} partition, but it can be applied to any other comparable non-root partition containing user data.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T155421Z" creationid="glucose" creationdate="20190529T155421Z">
-        <seg>== 分割區 ==
-雖然以下使用 {{ic|/home}} 分割區作為示範，但也適用於其他類似的非 root 分割區。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>== Secure erasure of the hard disk drive ==</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T083048Z" creationid="glucose" creationdate="20190512T083022Z">
         <seg>== 安全地覆寫硬碟 ==</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=== Automated unlocking and mounting ===</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161825Z" creationid="glucose" creationdate="20190529T161825Z">
-        <seg>=== 自動解鎖及掛載 ===</seg>
       </tuv>
     </tu>
     <tu>
@@ -108,16 +72,6 @@ For detailed instructions on how to erase and prepare a drive consult [[Securely
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>=== Manual mounting and unmounting ===
-To mount the partition:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161529Z" creationid="glucose" creationdate="20190529T161419Z">
-        <seg>=== 手動掛載與卸載 ===
-掛載一個分割區：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>=== Physical partitions ===</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144806Z" creationid="glucose" creationdate="20190512T144806Z">
@@ -134,54 +88,12 @@ To mount the partition:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>=== Using losetup ===</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T164735Z" creationid="glucose" creationdate="20190529T164735Z">
-        <seg>=== 使用 losetup ===</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>=== Without losetup ===</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162706Z" creationid="glucose" creationdate="20190529T162706Z">
-        <seg>=== 不使用 losetup ===</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>=== dm-crypt specific methods ===
 The following two methods are specific for dm-crypt and are mentioned because they are very fast and can be performed after a partition setup too.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T090029Z" creationid="glucose" creationdate="20190512T085633Z">
         <seg>=== dm-crypt 的專用方法 ===
 以下兩種方式特別針對 dm-crypt 因為它們非常快速也可以在設定分割區後才執行。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>==== At boot time ====</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161905Z" creationid="glucose" creationdate="20190529T161905Z">
-        <seg>==== 在開機時 ====</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>==== Manual mounting and unmounting ====
-To unmount the container:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171755Z" creationid="glucose" creationdate="20190529T171755Z">
-        <seg>==== 手動掛載與卸載 ====
-卸載容器：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>==== On user login ====</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162535Z" creationid="glucose" creationdate="20190529T162244Z">
-        <seg>==== 在使用者當入時 ====</seg>
       </tuv>
     </tu>
     <tu>
@@ -226,22 +138,6 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>A loop device enables to map a blockdevice to a file with the standard util-linux tool {{ic|losetup}}.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T164901Z" creationid="glucose" creationdate="20190529T164852Z">
-        <seg>Loop 裝置可以使用標準的 util-linux 工具 {{ic|losetup}} 映射到底層區塊裝置檔案上。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>A lot of users know [[TrueCrypt]] as a tool to create encrypted containers.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T165553Z" creationid="glucose" creationdate="20190529T165553Z">
-        <seg>許多使用者知道 [[TrueCrypt]] 也是一的建立加密容器的工具。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>A use of {{ic|1=if=/dev/urandom}} is not required as the encryption cipher is used for randomness.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T093804Z" creationid="glucose" creationdate="20190512T093109Z">
@@ -274,14 +170,6 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>After unlocking the partition, it will be available at {{ic|/dev/mapper/''name''}}.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161146Z" creationid="glucose" creationdate="20190529T161146Z">
-        <seg>解鎖之後，此分分割區可以在 {{ic|/dev/mapper/''name''}} 存取。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>An exception to this may occur for an SSD, because of cache blocks SSDs employ.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142204Z" creationid="glucose" creationdate="20190512T142204Z">
@@ -298,50 +186,10 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Ask for a new loop device with {{ic|# losetup -f}}.}}</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171324Z" creationid="glucose" creationdate="20190529T171324Z">
-        <seg>使用 {{ic|# losetup -f}} 請求新的 loop 裝置。}}</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Because dm-crypt is a [[Disk encryption#Block_device_encryption|block-level]] encryption layer, it only encrypts full devices, [[#Partition|full partitions]] and [[#Loop_device|loop devices]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T154929Z" creationid="glucose" creationdate="20190529T154837Z">
-        <seg>因為 dm-crypt 是 [[Disk encryption#Block_device_encryption|底層區塊級]] 加密層，它只能加密 [[#分割區|整個分割區]] 或 [[#Loop 裝置|loop 裝置]]。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Before encrypting a drive, it is recommended to perform a secure erase of the disk by overwriting the entire drive with random data.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T082814Z" creationid="glucose" creationdate="20190512T082411Z">
         <seg>在加密您的裝置之前，這裡非常推薦使用隨機亂數去覆寫整個裝置以確保安全。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Before running {{ic|cryptsetup}}, look at the [[Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode|Encryption options for LUKS mode]] and [[Disk_encryption#Ciphers_and_modes_of_operation|Ciphers and modes of operation]] first to select your additional desired settings.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T163100Z" creationid="glucose" creationdate="20190529T163100Z">
-        <seg>在執行 {{ic|cryptsetup}}之前，請先參閱 [[Dm-crypt/Device_encryption#Encryption_options_for_LUKS_mode|Encryption options for LUKS mode]] 及 [[Disk_encryption#Ciphers_and_modes_of_operation|Ciphers and modes of operation]] f選擇您想使用的加密選項。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Create the partition which will contain the encrypted container.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T160608Z" creationid="glucose" creationdate="20190529T160608Z">
-        <seg>建立將包含加密容器的分割區。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Delete the partition and create an empty one if it has a file system.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T160418Z" creationid="glucose" creationdate="20190529T160418Z">
-        <seg>如果已經建立好檔案系統請先刪除後重新建立一個空白分割區。</seg>
       </tuv>
     </tu>
     <tu>
@@ -362,26 +210,10 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>First make sure the partition is empty (has no file system attached to it).</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T160345Z" creationid="glucose" creationdate="20190529T160345Z">
-        <seg>首先請確定目標分割區是空白的（沒有任何檔案系統）。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>First, create a temporary encrypted container on the partition (using the form {{ic|sdXY}}) or complete device (using the form {{ic|sdX}}) to be encrypted:</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T094926Z" creationid="glucose" creationdate="20190512T091710Z">
         <seg>首先，在一個分割區上建立一個暫時的加密容器（{{ic|sdXY}}）或完整的裝置（{{ic|sdX}}）來加密：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>First, start by creating an encrypted container, using an appropriate [[random number generator]]:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T170002Z" creationid="glucose" creationdate="20190529T170002Z">
-        <seg>首先請使用適當的 [[random number generator|隨機數生產器]] 建立加密容器：</seg>
       </tuv>
     </tu>
     <tu>
@@ -410,14 +242,6 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>For other desktops, {{Aur|zulucrypt}} also provides a GUI.}}</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161816Z" creationid="glucose" creationdate="20190529T161810Z">
-        <seg>對於其他桌面，{{Aur|zulucrypt}} 也提供 GUI。}}</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>For strong security concerns, a secure ATA erase of the SSD should be done (procedure please see the cryptsetup [https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects FAQ 5.19]).</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T142522Z" creationid="glucose" creationdate="20190512T142522Z">
@@ -430,30 +254,6 @@ To unmount the container:</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T125721Z" creationid="glucose" creationdate="20190512T125721Z">
         <seg>沒有任何偏移的情況：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>From now on the procedure is the same as for [[#Partition]], except for the fact that the container is already randomised and will not need another secure erasure.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171501Z" creationid="glucose" creationdate="20190529T171501Z">
-        <seg>現在開始與 [[#分割區]] 的操作方式相同，除了因為裝置已經隨機化所比不需要再次進行安全覆寫。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Have a look at the features and documentation of [[Tomb]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171618Z" creationid="glucose" creationdate="20190529T171618Z">
-        <seg>看看 [[Tomb]] 的功能與文件。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Having too small of a file will get you a {{ic|Requested offset is beyond real size of device /dev/loop0}} error, but as a rough reference creating a 4 MiB file will encrypt it successfully.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T164523Z" creationid="glucose" creationdate="20190529T164523Z">
-        <seg>當檔案太小時可能會出現這樣 {{ic|Requested offset is beyond real size of device /dev/loop0}} 的錯誤，大致上建立 4 MiB 的檔案就會成功了。</seg>
       </tuv>
     </tu>
     <tu>
@@ -478,14 +278,6 @@ To unmount the container:</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T113538Z" creationid="glucose" creationdate="20190512T100257Z">
         <seg>請記得考慮有關於檔案系統是否有設定保留空間，像是給 root 帳號或其他 [[disk quota|磁碟配額]] 等機制，即使使用 root 帳號也有可能被限制覆寫：有些部份的底層區塊裝置可能無法完全被寫入。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>If creating a larger file, {{ic|dd}} from {{ic|/dev/urandom}} will stop after 32 MiB, requiring the {{ic|1=iflag=fullblock}} option to complete the full write.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T164655Z" creationid="glucose" creationdate="20190529T164655Z">
-        <seg>如果使用 {{ic|dd}} 從 {{ic|/dev/urandom}} 建立大檔案，將會停留在 32 MiB，需要使用 {{ic|1=iflag=fullblock}} 選項才可以完整寫入。</seg>
       </tuv>
     </tu>
     <tu>
@@ -518,14 +310,6 @@ To unmount the container:</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T144623Z" creationid="glucose" creationdate="20190512T144621Z">
         <seg>如果因此有安全上的疑慮，請參閱 [[dm-crypt/Specialties#Securing the unencrypted boot partition]]。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>If you are going to use LUKS mode, its metadata header requires one to two megabytes alone.}}</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171000Z" creationid="glucose" creationdate="20190529T170904Z">
-        <seg>如果您使用 LUKS 模式，他的標頭資料需要大約 1 至 2 megabytes。}}</seg>
       </tuv>
     </tu>
     <tu>
@@ -586,26 +370,10 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>It provides a ''dm-crypt'' script wrapper for fast and flexible handling.}}</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171722Z" creationid="glucose" creationdate="20190529T171722Z">
-        <seg>它提供了 ''dm-crypt'' 指令搞的包裝，可以快速且靈活的使用。}}</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>It will also be possible to add or remove partitions in the future, but resizing a partition will be limited by the size of the disk that is hosting it.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T145351Z" creationid="glucose" creationdate="20190512T145351Z">
         <seg>當然也可以隨意增加或刪除分割區，但是變更分割區大小會受到硬碟大小本身的限制。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Just about the same functionality can be achieved with a loopback filesystem encrypted with LUKS and is shown in the following example.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T165759Z" creationid="glucose" creationdate="20190529T165759Z">
-        <seg>使用以下的範例透過 LUKS 加密 loopback 檔案系統一樣可以做到相同的功能。</seg>
       </tuv>
     </tu>
     <tu>
@@ -626,34 +394,10 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Manual mounting and unmounting procedure is equivalent to [[#Manual mounting and unmounting]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T164730Z" creationid="glucose" creationdate="20190529T164730Z">
-        <seg>手動掛載與卸載的步驟跟 [[#手動掛載與卸載]] 相同。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Moreover, separate passphrases or keys will be required to open each encrypted device.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T150809Z" creationid="glucose" creationdate="20190512T150744Z">
         <seg>此外，每一個加密層都需要獨立的密語或金鑰才能打開。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Mount the file system to {{ic|/home}}, or if it should be accessible to only one user to {{ic|/home/''username''}}, see [[#Manual mounting and unmounting]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T175240Z" creationid="glucose" creationdate="20190529T161415Z">
-        <seg>掛載檔案系統到 {{ic|/home}}，或者只想要給單一使用者存取的 {{ic|/home/''username''}} 目錄，請參閱 [[#手動掛載與卸載]]。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Next create the device node {{ic|/dev/loop0}}, so that we can mount/use our container:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171051Z" creationid="glucose" creationdate="20190529T171051Z">
-        <seg>接著建立裝置節點 {{ic|/dev/loop0}}， 這樣我們就可以掛載使用我的們容器：</seg>
       </tuv>
     </tu>
     <tu>
@@ -666,74 +410,10 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>Now create a [[file system]] of your choice with:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T172314Z" creationid="glucose" creationdate="20190529T161233Z">
-        <seg>現在請建立一個您想要的 [[file system|檔案系統]] ：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>One can use a file manager with gvfs support (e.g. [[Thunar]]) to mount the partition, and a password dialog will pop-up.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161751Z" creationid="glucose" creationdate="20190529T161751Z">
-        <seg>使用一個支援 gvfs 的檔案管理器（例如 [[Thunar]]）掛載分割區，密碼提示視窗就會跳出來。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>One might also choose to encrypt sets of data separately according to who has access to it.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T154252Z" creationid="glucose" creationdate="20190529T154252Z">
-        <seg>也可以利用加密設定選擇誰擁有哪些分區的存取權限。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Replace {{ic|''device''}} with the previously created partition.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T160820Z" creationid="glucose" creationdate="20190529T160820Z">
-        <seg>使用剛剛所建立的分割區取代 {{ic|''device''}} 。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>See [[Disk encryption]] for general information about securing private data.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T155117Z" creationid="glucose" creationdate="20190529T155117Z">
-        <seg>請參閱 [[Disk encryption]] 取得更多有資訊關於保護隱私資料。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>See [[Dm-crypt/Device encryption#Encryption options for LUKS mode]] for details like the available {{ic|''options''}}.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T160855Z" creationid="glucose" creationdate="20190529T160855Z">
-        <seg>請參閱 [[Dm-crypt/Device encryption#Encryption options for LUKS mode]] 取得 {{ic|''options''}} 的詳細內容。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>See [[Dm-crypt/System configuration#crypttab]] for references and [[Dm-crypt/System configuration#Mounting at boot time]] for an example set up.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162237Z" creationid="glucose" creationdate="20190529T162237Z">
-        <seg>請參閱 [[Dm-crypt/System configuration#crypttab]] 及 [[Dm-crypt/System configuration#Mounting at boot time]] 查看設定範例。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>See [[dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)]].</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T151712Z" creationid="glucose" creationdate="20190512T151712Z">
         <seg>請參閱 [[dm-crypt/Encrypting an entire system#Encrypted boot partition (GRUB)]]。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>See [[dm-crypt/Mounting at login]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162502Z" creationid="glucose" creationdate="20190529T162502Z">
-        <seg>請參閱 [[dm-crypt/Mounting at login]]。</seg>
       </tuv>
     </tu>
     <tu>
@@ -810,82 +490,10 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>The file can then contain a filesystem, which can be used quite like any other filesystem.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T165328Z" creationid="glucose" creationdate="20190529T165328Z">
-        <seg>這個檔案可以擁有自己的檔案系統，可以如同其他檔案系統一樣使用。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>The instructions for opening the device and making the [[file system]] are the same as [[#Partition]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T172240Z" creationid="glucose" creationdate="20190529T163309Z">
-        <seg>開啟裝置與建立 [[file system|檔案系統]] 的步驟與 [[#分割區]] 相同。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>The partitions formatted with dm-crypt/LUKS contain a header with the cipher and crypt-options used, which is referred to {{ic|dm-mod}} when opening the blockdevice.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T115833Z" creationid="glucose" creationdate="20190512T115833Z">
         <seg>被 dm-crypt/LUKS 格式化的分割區標頭會含有密碼及加密選項， 當開啟區塊裝置時被稱為 {{ic|dm-mod}}。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Then prepare the partition by securely erasing it, see [[Dm-crypt/Drive preparation#Secure erasure of the hard disk drive]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T175223Z" creationid="glucose" creationdate="20190529T160511Z">
-        <seg>然後準備安全的覆寫該分割區，請參閱 [[dm-crypt/Drive preparation (正體中文)#安全地覆寫硬碟]].</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Then setup the LUKS header with:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T160628Z" creationid="glucose" creationdate="20190529T160628Z">
-        <seg>然後使用以下指令建立 LUKS 標頭：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>There are three different solutions for automating the process of unlocking the partition and mounting its filesystem.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161857Z" creationid="glucose" creationdate="20190529T161857Z">
-        <seg>這裡有三種方式可以自動解鎖分割區後掛載各自的檔案系統。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>There are two methods for using a loop device as an encrypted container, one using {{ic|losetup}} directly and one without.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T175501Z" creationid="glucose" creationdate="20190529T162700Z">
-        <seg>這裡有兩種方式可以將 loop 裝置作為加密容器，一種使用 {{ic|losetup}} 而另外一種則不使用。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>These days (Kernel 3.2) loop devices are created on demand.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171301Z" creationid="glucose" creationdate="20190529T171301Z">
-        <seg>最近（Kernel 3.2）loop 裝置是照需求所建立的。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>This is the recommended solution if you want to use one common partition for all user's home partitions or automatically mount another encrypted block device.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162149Z" creationid="glucose" creationdate="20190529T162149Z">
-        <seg>這方法推薦用於當您想要使用單一使用者家目錄分割區時或自動掛載其他已加密的區塊裝置。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>This is useful for encrypting an external medium, such as a USB drive, so that it can be moved to different computers securely.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T154126Z" creationid="glucose" creationdate="20190529T154126Z">
-        <seg>這可以運用在許多外接媒體，像是隨身碟或隨身硬碟，因此可以安全地在不同電腦之間使用資料。</seg>
       </tuv>
     </tu>
     <tu>
@@ -906,26 +514,10 @@ To unmount the container:</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>This will create the file {{ic|bigsecret}} with a size of 10 megabytes.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T170653Z" creationid="glucose" creationdate="20190529T170056Z">
-        <seg>這樣會建立一個名為 {{ic|bigsecret}}且大小為 10 megabytes 的檔案。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>This, however, is the only choice for systems that need encrypted file systems to span multiple disks.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T150851Z" creationid="glucose" creationdate="20190512T150851Z">
         <seg>但這是跨多硬碟的加密系統唯一一個的方法。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>To encrypt individual files requires a filesystem-level encryption layer, such as [[eCryptfs]] or [[EncFS]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T155025Z" creationid="glucose" creationdate="20190529T155025Z">
-        <seg>如果需要加密個人零散的檔案需要使用檔案系統級的加密層像是 [[eCryptfs]] 或 [[EncFS]]。</seg>
       </tuv>
     </tu>
     <tu>
@@ -944,22 +536,6 @@ Sync the cache to disk and then delete the file to reclaim the free space.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>To gain access to the encrypted partition, unlock it with the device mapper, using:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161115Z" creationid="glucose" creationdate="20190529T161115Z">
-        <seg>要獲得加密分區的存取權限，使用解鎖，請使用裝置映射器解鎖，指令如下：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>To mount the container again:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171802Z" creationid="glucose" creationdate="20190529T171802Z">
-        <seg>再次掛載容器：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>To prevent cryptographic attacks or unwanted [[file recovery]], this data is ideally indistinguishable from data later written by dm-crypt.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T082935Z" creationid="glucose" creationdate="20190512T082811Z">
@@ -968,50 +544,10 @@ Sync the cache to disk and then delete the file to reclaim the free space.</seg>
     </tu>
     <tu>
       <tuv lang="EN-US">
-        <seg>To unmount it:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161541Z" creationid="glucose" creationdate="20190529T161541Z">
-        <seg>卸載一個分割區：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Unlocking on user login is also possible with [[pam_mount]].</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162530Z" creationid="glucose" creationdate="20190529T162530Z">
-        <seg>使用 [[pam_mount]] 也可以達成在使用者登入時解鎖的目的。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
         <seg>Users who did not have time for the wipe procedure before [[Dm-crypt/Encrypting_an_entire_system|installation]], can achieve a similar effect once the encrypted system is booted and the filesystems are mounted.</seg>
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T100022Z" creationid="glucose" creationdate="20190512T100022Z">
         <seg>某些用戶沒有時間在 [[Dm-crypt/Encrypting_an_entire_system|安裝]] 前執行覆寫，在加密系統開啟完成及掛載檔案系統後，可以達成類似的效果。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Using ''pam_exec'' it is possible to unlock (''cryptsetup open'') the partition on user login: this is the recommended solution if you want to have a single user's home directory on a partition.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162428Z" creationid="glucose" creationdate="20190529T162428Z">
-        <seg>使用 ''pam_exec'' 可以在使用者登入之時解鎖 (''cryptsetup open'') 分割區：這推薦用於各使用者擁有自己獨立加密的 {{ic|/home}} 分割區。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Using losetup directly can be avoided completely by doing the following [https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile]:</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T163000Z" creationid="glucose" creationdate="20190529T162955Z">
-        <seg>透過以下指令可以完全避免使用 losetup [https://wiki.gentoo.org/wiki/Custom_Initramfs#Encrypted_keyfile]：</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>Using the {{ic|/etc/crypttab}} configuration file, unlocking happens at boot time by systemd's automatic parsing.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T162022Z" creationid="glucose" creationdate="20190529T162022Z">
-        <seg>使用 {{ic|/etc/crypttab}} 設定檔，將在開機時 systemd 的自動解析過程中解鎖。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1096,22 +632,14 @@ Sync the cache to disk and then delete the file to reclaim the free space.</seg>
 [[pl:Dm-crypt/Encrypting a non-root file system]]
 The following are examples of encrypting a secondary, i.e. non-root, filesystem with dm-crypt.</seg>
       </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T175701Z" creationid="glucose" creationdate="20190512T152914Z">
+      <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T152914Z" creationid="glucose" creationdate="20190512T152914Z">
         <seg>{{Lowercase title}}
-[[Category:Encryption (正體中文)]]
+[[Category:Disk encryption]]
 [[en:Dm-crypt/Encrypting a non-root file system]]
 [[es:Dm-crypt/Encrypting a non-root file system]]
 [[ja:Dm-crypt/root 以外のファイルシステムの暗号化]]
 [[pl:Dm-crypt/Encrypting a non-root file system]]
-以下是有關使用 dm-crypt 加密次要檔案系統（就是非 root 分割區）的範例。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>{{Note|If it gives you the error {{ic|/dev/loop0: No such file or directory}}, you need to first load the kernel module with {{ic|modprobe loop}}.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171210Z" creationid="glucose" creationdate="20190529T171210Z">
-        <seg>{{註記|如果出現 {{ic|/dev/loop0: No such file or directory}} 這樣的錯誤訊息，您應該先載入 {{ic|modprobe loop}} 內核模組。</seg>
+The following are examples of encrypting a secondary, i.e. non-root, filesystem with dm-crypt.</seg>
       </tuv>
     </tu>
     <tu>
@@ -1120,14 +648,6 @@ The following are examples of encrypting a secondary, i.e. non-root, filesystem 
       </tuv>
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T123828Z" creationid="glucose" creationdate="20190512T120415Z">
         <seg>{{註記|寫入 LUKS 分割區 (本例中為 {{ic|/dev/sdX'''1'''}}) 而不是直接指向磁碟裝置節點是很重要的關鍵。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>{{Note|To avoid having to [[Dm-crypt/Device_encryption#Loopback filesystem|resize]] the container later on, make sure to make it larger than the total size of the files to be encrypted, in order to at least also host the associated metadata needed by the internal file system.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T170856Z" creationid="glucose" creationdate="20190529T170109Z">
-        <seg>{{註記|避免未來需要 [[Dm-crypt/Device_encryption#Loopback filesystem|resize]] 容器大小， 確保總大小大於加密大小，以便檔案系統內部需要管理的後設資料還有空間。</seg>
       </tuv>
     </tu>
     <tu>
@@ -1164,38 +684,6 @@ The following are examples of encrypting a secondary, i.e. non-root, filesystem 
       <tuv lang="ZH-TW" changeid="glucose" changedate="20190512T093248Z" creationid="glucose" creationdate="20190512T093122Z">
         <seg>{{提示|
 * 使用 ''dd'' 配合 {{ic|1=bs=}} 選項，像是 {{ic|1=bs=1M}}，可以增加硬碟在操作時的吞吐量。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>{{Tip|Containers with ''dm-crypt'' can be very flexible.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T171554Z" creationid="glucose" creationdate="20190529T171524Z">
-        <seg>{{提示|使用 ''dm-crypt'' 的容器可以非常的靈活。</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>{{Tip|Unmount and mount once to verify that the mapping is working as intended.}}</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T161520Z" creationid="glucose" creationdate="20190529T161520Z">
-        <seg>{{提示|可以掛載與卸載一次確認裝置映射是正常運作的。}}</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>{{Tip|You can either have a single user's {{ic|/home}} directory on a partition, or create a common partition for all user's {{ic|/home}} directories.}}</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T170916Z" creationid="glucose" creationdate="20190529T160253Z">
-        <seg>{{提示|您可以建立每一個使用者 {{ic|/home}} 目錄為單一的分割區， 或者建立一個所有使用者共用的 {{ic|/home}} 目錄。}}</seg>
-      </tuv>
-    </tu>
-    <tu>
-      <tuv lang="EN-US">
-        <seg>{{Tip|[[GVFS]] can also mount encrypted partitions.</seg>
-      </tuv>
-      <tuv lang="ZH-TW" changeid="glucose" changedate="20190529T175343Z" creationid="glucose" creationdate="20190529T161608Z">
-        <seg>{{提示|[[GVFS]] 也可以掛載加密分割區。</seg>
       </tuv>
     </tu>
     <tu>
